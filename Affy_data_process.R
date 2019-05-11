@@ -7,47 +7,47 @@ install.packages("ggplot2")
 library(affyPLM)
 
 Data<-ReadAffy() ## input data
-Pset<-fitPLM (Data) ##¶ÔÊý¾Ý¼¯½øÐÐ»Ø¹é¼ÆËã
-image(Data[,1]) ## ÖÊÁ¿¿ØÖÆ£º²é¿´»Ò¶ÈÍ¼
-image(Pset,type="weights",which=1,main="Weights") ##¸ù¾Ý¼ÆËã½á¹û£¬»­È¨ÖØÍ¼
-image(Pset,type="resids",which=1,main="Residuals") ##¸ù¾Ý¼ÆËã½á¹û£¬»­²Ð²îÍ¼
-image(Pset,type="sign.resids",which=1,main="Residuals.sign")##¸ù¾Ý¼ÆËã½á¹û£¬»­²Ð²î·ûºÅÍ¼
+Pset<-fitPLM (Data) ##å¯¹æ•°æ®é›†è¿›è¡Œå›žå½’è®¡ç®—
+image(Data[,1]) ## è´¨é‡æŽ§åˆ¶ï¼šæŸ¥çœ‹ç°åº¦å›¾
+image(Pset,type="weights",which=1,main="Weights") ##æ ¹æ®è®¡ç®—ç»“æžœï¼Œç”»æƒé‡å›¾
+image(Pset,type="resids",which=1,main="Residuals") ##æ ¹æ®è®¡ç®—ç»“æžœï¼Œç”»æ®‹å·®å›¾
+image(Pset,type="sign.resids",which=1,main="Residuals.sign")##æ ¹æ®è®¡ç®—ç»“æžœï¼Œç”»æ®‹å·®ç¬¦å·å›¾
 
 
-## ÖÊÁ¿¿ØÖÆ:Ïà¶Ô¶ÔÊý±í´ï£¨RLE£©
-## Ò»¸öÌ½Õë×éÔÚÄ³¸öÑùÆ·µÄ±í´ïÖµ³ýÒÔ¸ÃÌ½Õë×éÔÚËùÓÐÑùÆ·ÖÐ±í´ïÖ®µÄÖÐÎ»ÊýºóÈ¡¶ÔÊý
-## ·´Ó³Æ½ÐÐÊµÑéµÄÒ»ÖÂÐÔ
-#µ÷ÓÃR°ü
+## è´¨é‡æŽ§åˆ¶:ç›¸å¯¹å¯¹æ•°è¡¨è¾¾ï¼ˆRLEï¼‰
+## ä¸€ä¸ªæŽ¢é’ˆç»„åœ¨æŸä¸ªæ ·å“çš„è¡¨è¾¾å€¼é™¤ä»¥è¯¥æŽ¢é’ˆç»„åœ¨æ‰€æœ‰æ ·å“ä¸­è¡¨è¾¾ä¹‹çš„ä¸­ä½æ•°åŽå–å¯¹æ•°
+## åæ˜ å¹³è¡Œå®žéªŒçš„ä¸€è‡´æ€§
+#è°ƒç”¨RåŒ…
 library(affyPLM)
 library(RColorBrewer)
 
-Pset<-fitPLM (Data) #¶ÔÊý¾Ý¼¯½øÐÐ»Ø¹é¼ÆËã
-colors<-brewer.pal(12,"Set3") #ÔØÈëÑÕÉ«
-Mbox(Pset,col=colors,main="RLE",las=3) #»æÖÆRLEÏäÏßÍ¼
+Pset<-fitPLM (Data) #å¯¹æ•°æ®é›†è¿›è¡Œå›žå½’è®¡ç®—
+colors<-brewer.pal(12,"Set3") #è½½å…¥é¢œè‰²
+Mbox(Pset,col=colors,main="RLE",las=3) #ç»˜åˆ¶RLEç®±çº¿å›¾
 
-## ÖÊÁ¿¿ØÖÆ£ºÏà¶Ô±ê×¼²î£¨NUSE£©
-## Ò»¸öÌ½Õë×éÔÚÄ³¸öÑùÆ·µÄPMÖµµÄ±ê×¼²î³ýÒÔ¸ÃÌ½Õë×éÔÚ¸÷ÑùÆ·ÖÐµÄPMÖµ±ê×¼²îµÄÖÐÎ»ÊýºóÈ¡¶ÔÊý¡£
-##·´Ó³Æ½ÐÐÊµÑéµÄÒ»ÖÂÐÔ±ÈRLE¸üÎªÃô¸Ð¡£
+## è´¨é‡æŽ§åˆ¶ï¼šç›¸å¯¹æ ‡å‡†å·®ï¼ˆNUSEï¼‰
+## ä¸€ä¸ªæŽ¢é’ˆç»„åœ¨æŸä¸ªæ ·å“çš„PMå€¼çš„æ ‡å‡†å·®é™¤ä»¥è¯¥æŽ¢é’ˆç»„åœ¨å„æ ·å“ä¸­çš„PMå€¼æ ‡å‡†å·®çš„ä¸­ä½æ•°åŽå–å¯¹æ•°ã€‚
+##åæ˜ å¹³è¡Œå®žéªŒçš„ä¸€è‡´æ€§æ¯”RLEæ›´ä¸ºæ•æ„Ÿã€‚
 
 library(affyPLM)
 library(RColorBrewer)
 
-Pset<-fitPLM (Data) #¶ÔÊý¾Ý¼¯½øÐÐ»Ø¹é¼ÆËã
-colors<-brewer.pal(12,"Set3") #ÔØÈëÑÕÉ«
-boxplot(Pset,col=colors,main="NUSE",las=3) #»æÖÆNUSEÏäÏßÍ¼
+Pset<-fitPLM (Data) #å¯¹æ•°æ®é›†è¿›è¡Œå›žå½’è®¡ç®—
+colors<-brewer.pal(12,"Set3") #è½½å…¥é¢œè‰²
+boxplot(Pset,col=colors,main="NUSE",las=3) #ç»˜åˆ¶NUSEç®±çº¿å›¾
 
-## ÖÊÁ¿¿ØÖÆ£ºRNA½µ½âÍ¼
-## Ô­Àí£ºRNA½µ½â´Ó5¡¯¶Ë¿ªÊ¼£¬ÒòÎªÐ¾Æ¬½á¹û5¡¯¶ËÓ«¹âÇ¿¶ÈÒªÔ¶µÍÓÚ3¡¯¶Ë
+## è´¨é‡æŽ§åˆ¶ï¼šRNAé™è§£å›¾
+## åŽŸç†ï¼šRNAé™è§£ä»Ž5â€™ç«¯å¼€å§‹ï¼Œå› ä¸ºèŠ¯ç‰‡ç»“æžœ5â€™ç«¯è§å…‰å¼ºåº¦è¦è¿œä½ŽäºŽ3â€™ç«¯
 
-#µ÷ÓÃR°ü
+#è°ƒç”¨RåŒ…
 library(affy)
 
-data.deg<-AffyRNAdeg(Data) #»ñÈ¡½µ½âÊý¾Ý
-plotAffyRNAdeg(data.deg,col=colors) #»æÖÆRNA½µ½âÍ¼
-legend("topleft",sampleNames(Data),col=colors,lwd=1,inset=0.05,cex=0.2) #ÔÚ×óÉÏ²¿Î»Ìí¼ÓÍ¼×¢
+data.deg<-AffyRNAdeg(Data) #èŽ·å–é™è§£æ•°æ®
+plotAffyRNAdeg(data.deg,col=colors) #ç»˜åˆ¶RNAé™è§£å›¾
+legend("topleft",sampleNames(Data),col=colors,lwd=1,inset=0.05,cex=0.2) #åœ¨å·¦ä¸Šéƒ¨ä½æ·»åŠ å›¾æ³¨
 
 
-## RMA·¨Ô¤´¦ÀínormalÑù±¾
+## RMAæ³•é¢„å¤„ç†normalæ ·æœ¬
 setwd("")
 library(affyPLM)
 library(affy)
@@ -56,14 +56,14 @@ Data<-ReadAffy()
 sampleNames(Data)
 N=length(Data)
 
-eset.rma<-rma(Data) ##ÓÃRMAÔ¤´¦ÀíÊý¾Ý
-##»ñÈ¡±í´ïÊý¾Ý²¢Êä³öµ½±í¸ñ
+eset.rma<-rma(Data) ##ç”¨RMAé¢„å¤„ç†æ•°æ®
+##èŽ·å–è¡¨è¾¾æ•°æ®å¹¶è¾“å‡ºåˆ°è¡¨æ ¼
 normal_exprs<-exprs(eset.rma)
 probeid<-rownames(normal_exprs)
 normal_exprs<-cbind(probeid,normal_exprs)
 write.table(normal_exprs,file="normal.expres.txt",sep='\t',quote=F,row.names=F)
 
-## RMA·¨Ô¤´¦ÀítumorÑù±¾
+## RMAæ³•é¢„å¤„ç†tumoræ ·æœ¬
 setwd("")
 library(affyPLM)
 library(affy)
@@ -72,74 +72,74 @@ Data<-ReadAffy()
 sampleNames(Data)
 N=length(Data)
 
-## ÓÃRMAÔ¤´¦ÀíÊý¾Ý
+## ç”¨RMAé¢„å¤„ç†æ•°æ®
 eset.rma<-rma(Data)
-## »ñÈ¡±í´ïÊý¾Ý²¢Êä³öµ½±í¸ñ
+## èŽ·å–è¡¨è¾¾æ•°æ®å¹¶è¾“å‡ºåˆ°è¡¨æ ¼
 normal_exprs<-exprs(eset.rma)
 probeid<-rownames(normal_exprs)
 normal_exprs<-cbind(probeid,normal_exprs)
 write.table(normal_exprs,file="tumor.expres.txt",sep='\t',quote=F,row.names=F)
 
-## ºÏ²¢NºÍTµÄÊý¾Ý
+## åˆå¹¶Nå’ŒTçš„æ•°æ®
 #setwd(" ")
 normal_exprs<-read.table("normal.expres.txt",header=T,sep="\t")
 tumor_exprs<-read.table("tumor.expres.txt",header=T,sep="\t")
-#½²TºÍNºÏ²¢
+#è®²Tå’ŒNåˆå¹¶
 probe_exprs<-merge(normal_exprs,tumor_exprs,by="probeid")
 write.table(probe_exprs,file="cancer.probeid.exprs.txt",sep='\t',quote=F,row.names=F)
 
-## Probe ID conversion Gene symbol£¨¶ÔÆ½Ì¨ÎÄ¼þ½øÐÐÕûÀí£©
+## Probe ID conversion Gene symbolï¼ˆå¯¹å¹³å°æ–‡ä»¶è¿›è¡Œæ•´ç†ï¼‰
 setwd("")
 
-probe_exp<-read.table("cancer.probeid.exprs.txt",header=T,sep="\t",row.names=1) #¶ÁÈ¡»ùÒò±í´ïÎÄ¼þ
-probeid_geneid<-read.table("GPL570-55999.txt",header=T,sep="\t") #¶ÁÈ¡Ì½ÕëÎÄ¼þ
+probe_exp<-read.table("cancer.probeid.exprs.txt",header=T,sep="\t",row.names=1) #è¯»å–åŸºå› è¡¨è¾¾æ–‡ä»¶
+probeid_geneid<-read.table("GPL570-55999.txt",header=T,sep="\t") #è¯»å–æŽ¢é’ˆæ–‡ä»¶
 probe_name<-rownames(probe_exp)
-loc<-match(probeid_geneid[,1],probe_name) #probe½øÐÐÆ¥Åä
-probe_exp<-probe_exp[loc,] #È·¶¨ÄÜÆ¥ÅäÉÏµÄprobe±í´ïÖµ
-raw_geneid<-as.numeric(as.matrix(probeid_geneid[,3])) #Ã¿¸öprobeidÓ¦¶ÔµÄgeneid
-index<-which(!is.na(raw_geneid)) #ÕÒ³öÓÐgeneidµÄprobeid²¢½¨Á¢Ë÷Òý
+loc<-match(probeid_geneid[,1],probe_name) #probeè¿›è¡ŒåŒ¹é…
+probe_exp<-probe_exp[loc,] #ç¡®å®šèƒ½åŒ¹é…ä¸Šçš„probeè¡¨è¾¾å€¼
+raw_geneid<-as.numeric(as.matrix(probeid_geneid[,3])) #æ¯ä¸ªprobeidåº”å¯¹çš„geneid
+index<-which(!is.na(raw_geneid)) #æ‰¾å‡ºæœ‰geneidçš„probeidå¹¶å»ºç«‹ç´¢å¼•
 
-geneid<-raw_geneid[index] #ÌáÈ¡ÓÐgeneidµÄprobe
+geneid<-raw_geneid[index] #æå–æœ‰geneidçš„probe
 
-#ÕÒµ½Ã¿¸ögeneidµÄ±í´ïÖµ
+#æ‰¾åˆ°æ¯ä¸ªgeneidçš„è¡¨è¾¾å€¼
 exp_matrix<-probe_exp[index,]
 geneidfactor<-factor(geneid)
 
-#¶à¸öÌ½Õë¶ÔÓ¦1¸ö»ùÒòµÄÇé¿ö£¬È¡Æ½¾ùÖµ
+#å¤šä¸ªæŽ¢é’ˆå¯¹åº”1ä¸ªåŸºå› çš„æƒ…å†µï¼Œå–å¹³å‡å€¼
 gene_exp_matrix<-apply(exp_matrix,2,function(x) tapply(x,geneidfactor,mean))
 
-#geneid×÷ÎªÐÐÃû
+#geneidä½œä¸ºè¡Œå
 rownames(gene_exp_matrix)<-levels(geneidfactor)
 geneid<-rownames(gene_exp_matrix)
 gene_exp_matrix2<-cbind(geneid,gene_exp_matrix)
 write.table(gene_exp_matrix2,file="Gastric.cancer.geneid.exprs.txt",sep='\t',quote=F,row.names=F)
 
-#½«gene id ×ª»»Îªgene symbol
+#å°†gene id è½¬æ¢ä¸ºgene symbol
 loc<-match(rownames(gene_exp_matrix),probeid_geneid[,3])
 rownames(gene_exp_matrix)=probeid_geneid[loc,2]
 genesymbol<-rownames(gene_exp_matrix)
 gene_exp_matrix3<-cbind(genesymbol,gene_exp_matrix)
 write.table(gene_exp_matrix3,file="Gastric.cancer.genesyb.exprs.txt",sep='\t',quote=F,row.names=F)
 
-## ²¹³äÈ±Ê§Öµ (ÐèÒª¶ÔgenesybÕâ¸öÎÄ¼þÐèÒª´¦Àí)
-## ×î½üÁÚ¾Ó·¨£¨KNN£¬k-Nearest Neighbor£©·¨£º
-## ´Ë·½·¨ÊÇÑ°ÕÒºÍÓÐÈ±Ê§ÖµµÄ»ùÒòµÄ±í´ïÆ×ÏàËÆµÄÆäËû»ùÒò£¬
-## Í¨¹ýÕâÐ©»ùÒòµÄ±í´ïÖµ£¨ÒÀÕÕ±í´ïÆ×ÏàËÆÐÔ¼ÓÈ¨£©À´Ìî³äÈ±Ê§Öµ
-#µ÷ÓÃº¯Êýimpute
+## è¡¥å……ç¼ºå¤±å€¼ (éœ€è¦å¯¹genesybè¿™ä¸ªæ–‡ä»¶éœ€è¦å¤„ç†)
+## æœ€è¿‘é‚»å±…æ³•ï¼ˆKNNï¼Œk-Nearest Neighborï¼‰æ³•ï¼š
+## æ­¤æ–¹æ³•æ˜¯å¯»æ‰¾å’Œæœ‰ç¼ºå¤±å€¼çš„åŸºå› çš„è¡¨è¾¾è°±ç›¸ä¼¼çš„å…¶ä»–åŸºå› ï¼Œ
+## é€šè¿‡è¿™äº›åŸºå› çš„è¡¨è¾¾å€¼ï¼ˆä¾ç…§è¡¨è¾¾è°±ç›¸ä¼¼æ€§åŠ æƒï¼‰æ¥å¡«å……ç¼ºå¤±å€¼
+#è°ƒç”¨å‡½æ•°impute
 
 library(impute)
 
-#¶ÁÈ¡±í´ïÖµ
+#è¯»å–è¡¨è¾¾å€¼
 gene_exp_matrix<-read.table("Gastric.cancer.genesyb.exprs.txt",header=T,sep="\t",row.names=1)
 gene_exp_matrix<-as.matrix(gene_exp_matrix)
 
-#KNN·¨¼ÆËãÈ±Ê§Öµ
+#KNNæ³•è®¡ç®—ç¼ºå¤±å€¼
 imputed_gene_exp<-impute.knn(gene_exp_matrix,k=10,rowmax=0.5,colmax=0.8,maxp=3000,rng.seed=362436069)
 
-#¶Á³ö¾­¹ýÈ±Ê§Öµ´¦ÀíµÄÊý¾Ý
+#è¯»å‡ºç»è¿‡ç¼ºå¤±å€¼å¤„ç†çš„æ•°æ®
 GeneExp<-imputed_gene_exp$data
 
-#Ð´Èë±í¸ñ
+#å†™å…¥è¡¨æ ¼
 genesymbol<-rownames(GeneExp)
 GeneExp<-cbind(genesymbol,GeneExp)
 write.table(GeneExp,file="Gastric.cancer.gene.exprs.txt",sep='\t',quote=F,row.names=F)
